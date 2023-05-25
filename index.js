@@ -1,9 +1,17 @@
-const date = new Date();
+// JavaScript program to find the area of a triangle
 
-let day = date.getDate();
-let month = date.getMonth() + 1;
-let year = date.getFullYear();
+const side1 = parseInt(prompt('Enter side1: '));
+const side2 = parseInt(prompt('Enter side2: '));
+const side3 = parseInt(prompt('Enter side3: '));
 
-// This arrangement can be altered based on how we want the date's format to appear.
-let currentDate = `${day}-${month}-${year}`;
-console.log(currentDate); 
+// calculate the semi-perimeter
+const s = (side1 + side2 + side3) / 2;
+
+//calculate the area
+const areaValue = Math.sqrt(
+  s * (s - side1) * (s - side2) * (s - side3)
+);
+
+console.log(
+  `The area of the triangle is ${areaValue}`
+);
