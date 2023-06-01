@@ -1,12 +1,17 @@
-function animate_string(id) 
-{
-    var element = document.getElementById(id);
-    var textNode = element.childNodes[0]; // assuming no other children
-    var text = textNode.data;
+// JavaScript program to find the area of a triangle
 
-setInterval(function () 
-{
- text = text[text.length - 1] + text.substring(0, text.length - 1);
-  textNode.data = text;
-}, 100);
-}
+const side1 = parseInt(prompt('Enter side1: '));
+const side2 = parseInt(prompt('Enter side2: '));
+const side3 = parseInt(prompt('Enter side3: '));
+
+// calculate the semi-perimeter
+const s = (side1 + side2 + side3) / 2;
+
+//calculate the area
+const areaValue = Math.sqrt(
+  s * (s - side1) * (s - side2) * (s - side3)
+);
+
+console.log(
+  `The area of the triangle is ${areaValue}`
+);
