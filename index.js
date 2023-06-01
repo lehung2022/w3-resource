@@ -1,12 +1,15 @@
-function animate_string(id) 
-{
-    var element = document.getElementById(id);
-    var textNode = element.childNodes[0]; // assuming no other children
-    var text = textNode.data;
+// program to check leap year
+function checkLeapYear(year) {
 
-setInterval(function () 
-{
- text = text[text.length - 1] + text.substring(0, text.length - 1);
-  textNode.data = text;
-}, 100);
+  //three conditions to find out the leap year
+  if ((0 == year % 4) && (0 != year % 100) || (0 == year % 400)) {
+      console.log(year + ' is a leap year');
+  } else {
+      console.log(year + ' is not a leap year');
+  }
 }
+
+// take input
+const year = prompt('Enter a year:');
+
+checkLeapYear(year);
