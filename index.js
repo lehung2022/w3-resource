@@ -1,9 +1,20 @@
-const date = new Date();
+let today = new Date();
+let christmasYear = today.getFullYear();
 
-let day = date.getDate();
-let month = date.getMonth() + 1;
-let year = date.getFullYear();
+if (today.getMonth() == 11 && today.getDate() > 25) {
+  christmasYear = christmasYear + 1;
+}
 
-// This arrangement can be altered based on how we want the date's format to appear.
-let currentDate = `${day}-${month}-${year}`;
-console.log(currentDate); 
+let christmasDate = new Date(christmasYear, 11, 25);
+let dayMilliseconds = 1000 * 60 * 60 * 24;
+
+let remainingDays = Math.ceil(
+  (christmasDate.getTime() - today.getTime()) /
+   (dayMilliseconds)
+);
+
+console.log(today);
+console.log(christmasYear);
+console.log(christmasDate);
+console.log(dayMilliseconds);
+console.log(remainingDays);
