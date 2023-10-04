@@ -1,13 +1,15 @@
-function difference(n) {
-    if (n <= 13)
-        return 13 - n;
-    else
-        return (n - 13) * 2;
+function sumTriple(x, y) {
+    if (x == y) {
+        return 3 * (x + y);
+    }
+    else {
+        return (x + y);
+    }
 }
 
 // write this one the screen
-document.write(difference(20),);
+document.write(sumTriple(20, 20),);
 
 // Display in the console
-console.log(difference(32))
-console.log(difference(11))
+console.log(sumTriple(10, 20));
+console.log(sumTriple(10, 10));
