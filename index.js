@@ -1,10 +1,35 @@
-function remove_character(str, char_pos) 
- {
-  part1 = str.substring(0, char_pos);
-  part2 = str.substring(char_pos + 1, str.length);
-  return (part1 + part2);
- }
-
-console.log(remove_character("Python",0));
-console.log(remove_character("Python",3));
-console.log(remove_character("Python",5));
+function removeWithHelpOfCharAt(str) {
+    // the OP's code with the help of `charAt`.
+    if (str.charAt(0) === 'p' && str.charAt(str.length - 1) === 'p') {
+  
+      return str.substring(1, str.length - 1);
+    } else {
+      return str;
+    }
+  }
+  console.log(
+    "removeWithHelpOfCharAt('pparallelepipedp') ...",
+    removeWithHelpOfCharAt('pparallelepipedp')
+  );
+  console.log(
+    "removeWithHelpOfCharAt('Pparallelepipedp') ...",
+    removeWithHelpOfCharAt('Pparallelepipedp')
+  );
+  
+  function removeWithHelpOfAt(str) {
+    // the OP's code with the help of `at` ...
+    // ... and a slightly changed way of returning the result.
+    if (str.at(0) === 'p' && str.at(-1) === 'p') {
+  
+      str = str.substring(1, str.length - 1);
+    }
+    return str;
+  }
+  console.log(
+    "removeWithHelpOfAt('pparallelepipedp') ...",
+    removeWithHelpOfAt('pparallelepipedp')
+  );
+  console.log(
+    "removeWithHelpOfAt('Pparallelepipedp') ...",
+    removeWithHelpOfAt('Pparallelepipedp')
+  );
