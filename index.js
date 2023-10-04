@@ -1,10 +1,10 @@
-function string_check(str1) {
-    if (str1 === null || str1 === undefined || str1.substring(0, 2) === 'Py') 
-    {
-      return str1;
-    }
-    return "Py"+str1;
-  }
-  
-  console.log(string_check("Python"));
-  console.log(string_check("thon"));
+function remove_character(str, char_pos) 
+ {
+  part1 = str.substring(0, char_pos);
+  part2 = str.substring(char_pos + 1, str.length);
+  return (part1 + part2);
+ }
+
+console.log(remove_character("Python",0));
+console.log(remove_character("Python",3));
+console.log(remove_character("Python",5));
