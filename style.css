@@ -27,6 +27,9 @@ body {
     align-items: center;
 }
 
+h2 {
+    text-align: center;
+}
 
 nav {
     display: -webkit-box;

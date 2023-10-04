@@ -1,12 +1,7 @@
-// program to convert celsius to fahrenheit
-// ask the celsius value to the user 
-const celsius = prompt("Enter a celsius value: ");
-
-// calculate fahrenheit
-const fahrenheit = (celsius * 1.8) + 32
+function GetURL() {
+    var gfg = document.URL;
+    document.getElementById("url").innerHTML = gfg;
+}
 // write this one the screen
-document.write(`${celsius} degree celsius is equal to ${fahrenheit} degree fahrenheit.`);
+// document.write(url2);
 
-
-// display the result
-// console.log(`${celsius} degree celsius is equal to ${fahrenheit} degree fahrenheit.`);
