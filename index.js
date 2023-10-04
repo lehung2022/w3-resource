@@ -1,18 +1,12 @@
-function check(str)
-{
-    if (str.length < 4)
-    {
-        return false;
-    }
-    front = str.substring(0,4)
-    if (front == 'Java')
-    {
+function check_numbers(x, y) {
+    if ((x >= 50 && x <= 99) || (y >= 50 && y <= 99)) {
         return true;
     }
-    else{
+    else {
         return false;
     }
 }
-console.log(check("JavaScript"));
-console.log(check("Java"));
-console.log(check("pYTHOMN"));
+
+console.log(check_numbers(12, 101));
+console.log(check_numbers(52, 80));
+console.log(check_numbers(15, 99));
