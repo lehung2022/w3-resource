@@ -10,8 +10,12 @@ let dayMilliseconds = 1000 * 60 * 60 * 24;
 
 let remainingDays = Math.ceil(
   (christmasDate.getTime() - today.getTime()) /
-   (dayMilliseconds)
+  (dayMilliseconds)
 );
+
+// Write it to the page
+document.write("There are " + remainingDays +
+  " days remaining until Christmas.");
 
 console.log(today);
 console.log(christmasYear);

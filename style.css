@@ -46,6 +46,15 @@ main {
     width: 100%;
 }
 
+.question {
+    display: flex;
+    flex-direction: row;
+    width: 50vw;
+    height: 10vh;
+    background-color: #fff;
+    justify-content: center;
+}
+
 .height100 {
     height: 100px;
 }
