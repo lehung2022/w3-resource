@@ -4,6 +4,9 @@ const celsius = prompt("Enter a celsius value: ");
 
 // calculate fahrenheit
 const fahrenheit = (celsius * 1.8) + 32
+// write this one the screen
+document.write(`${celsius} degree celsius is equal to ${fahrenheit} degree fahrenheit.`);
+
 
 // display the result
-console.log(`${celsius} degree celsius is equal to ${fahrenheit} degree fahrenheit.`);
+// console.log(`${celsius} degree celsius is equal to ${fahrenheit} degree fahrenheit.`);
