@@ -1,35 +1,19 @@
-function removeWithHelpOfCharAt(str) {
-    // the OP's code with the help of `charAt`.
-    if (str.charAt(0) === 'p' && str.charAt(str.length - 1) === 'p') {
-  
-      return str.substring(1, str.length - 1);
-    } else {
-      return str;
-    }
-  }
-  console.log(
-    "removeWithHelpOfCharAt('pparallelepipedp') ...",
-    removeWithHelpOfCharAt('pparallelepipedp')
-  );
-  console.log(
-    "removeWithHelpOfCharAt('Pparallelepipedp') ...",
-    removeWithHelpOfCharAt('Pparallelepipedp')
-  );
-  
-  function removeWithHelpOfAt(str) {
-    // the OP's code with the help of `at` ...
-    // ... and a slightly changed way of returning the result.
-    if (str.at(0) === 'p' && str.at(-1) === 'p') {
-  
-      str = str.substring(1, str.length - 1);
-    }
-    return str;
-  }
-  console.log(
-    "removeWithHelpOfAt('pparallelepipedp') ...",
-    removeWithHelpOfAt('pparallelepipedp')
-  );
-  console.log(
-    "removeWithHelpOfAt('Pparallelepipedp') ...",
-    removeWithHelpOfAt('Pparallelepipedp')
-  );
+// Solution 1
+var regExp = /^p(.*?)p$/;
+
+function remove(str) {
+    return regExp.test(str) ? str.slice(1, -1) : str
+}
+
+console.log(remove('pparallelepipedp')); // Returns: parallelepiped
+console.log(remove('oparallelepipedp')); // Returns: oparallelepipedp
+console.log(remove('pparallelepipedo')); // Returns: pparallelepipedo
+
+// Solution 2
+function front_back(str) {
+    first = str.substring(0, 1);
+    return first + str + first;
+}
+console.log(front_back('a'));
+console.log(front_back('ab'));
+console.log(front_back('abc'));
