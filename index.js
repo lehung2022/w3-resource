@@ -1,13 +1,13 @@
-function testhundred(x) {
-    return ((Math.abs(100 - x) <= 20) ||
-        (Math.abs(400 - x) <= 20));
+// check if the number is positive, negative or zero
+const number = prompt("Enter a number: ");
+
+if (number >= 0) {
+    if (number == 0) {
+        console.log("The number is zero");
+    } else {
+        console.log("The number is positive");
+    }
+} else {
+    console.log("The number is negative");
 }
-
-console.log(testhundred(10));
-console.log(testhundred(90));
-console.log(testhundred(99));
-console.log(testhundred(199));
-console.log(testhundred(200));
-
-document.write(testhundred(40));
 
