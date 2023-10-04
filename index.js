@@ -1,11 +1,9 @@
-function multiplyBy() {
-  num1 = document.getElementById("fn").value;
-  num2 = document.getElementById("sn").value;
-  document.getElementById("result").innerHTML = num1 * num2;
-}
+// program to convert celsius to fahrenheit
+// ask the celsius value to the user 
+const celsius = prompt("Enter a celsius value: ");
 
-function divideBy() {
-  num1 = document.getElementById("fn").value;
-  num2 = document.getElementById("sn").value;
-  document.getElementById("result").innerHTML = num1 / num2;
-} 
+// calculate fahrenheit
+const fahrenheit = (celsius * 1.8) + 32
+
+// display the result
+console.log(`${celsius} degree celsius is equal to ${fahrenheit} degree fahrenheit.`);
