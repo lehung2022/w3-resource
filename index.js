@@ -1,20 +1,23 @@
-function max_of_three(x, y, z) 
- {
-  max_val = 0;
-  if (x > y)
-  {
-    max_val = x;
-  } else
-  {
-    max_val = y;
+function near_100(x, y) {
+    if (x != y)
+    {
+    x1 = Math.abs(x - 100);
+    y1 = Math.abs(y - 100);
+  
+    if (x1 < y1)
+    {
+      return x;
+    }
+    if (y1 < x1)
+    {
+      return y;
+    }
+    return 0;
+    }
+    else
+      return false;
   }
-  if (z > max_val) 
-  {
-    max_val = z;
-  }
-  return max_val;
-}
-
-console.log(max_of_three(1,0,1));
-console.log(max_of_three(0,-10,-20));
-console.log(max_of_three(1000,510,440));
+  
+  console.log(near_100(90, 89));
+  console.log(near_100(-90, -89));
+  console.log(near_100(90, 90));
