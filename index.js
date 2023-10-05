@@ -1,20 +1,14 @@
-function check_char(str1, char)
- {
-  ctr = 0;
-  for (let i = 0; i < str1.length; i++)
-  {
-    if ((str1.charAt(i) == char) && (i >= 1 && i <= 3))
+function last_digit(x, y, z)
+{
+  if ((x > 0) && y > 0 && z > 0)
     {
-        ctr=1;
-        break;
-    }
+     return (x % 10 == y % 10 && y % 10 == z % 10 && x % 10 == z % 10);
    }
-   if (ctr==1) return true;
-   return false;
+  else
+    return false;
 }
-console.log(check_char("Python", "y"));
-console.log(check_char("JavaScript", "a"));
-console.log(check_char("Console", "o"));
-console.log(check_char("Console", "C"));
-console.log(check_char("Console", "e"));
-console.log(check_char("JavaScript", "S"));
+
+console.log(last_digit(20, 30, 400));
+console.log(last_digit(-20, 30, 400));
+console.log(last_digit(20, -30, 400));
+console.log(last_digit(20, 30, -400));
