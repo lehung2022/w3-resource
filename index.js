@@ -1,16 +1,20 @@
-function check_script(str) {
-    if (str.length < 6) {
-        return str;
-    }
-    let result_str = str;
-
-    if (str.substring(10, 4) == 'Script') {
-
-        result_str = str.substring(0, 4) + str.substring(10, str.length);
-
-    }
-    return result_str;
+function max_of_three(x, y, z) 
+ {
+  max_val = 0;
+  if (x > y)
+  {
+    max_val = x;
+  } else
+  {
+    max_val = y;
+  }
+  if (z > max_val) 
+  {
+    max_val = z;
+  }
+  return max_val;
 }
 
-console.log(check_script("JavaScript"));
-console.log(check_script("CoffeeScript"));
+console.log(max_of_three(1,0,1));
+console.log(max_of_three(0,-10,-20));
+console.log(max_of_three(1000,510,440));
