@@ -1,10 +1,10 @@
-const str = 'Coding Beauty';
+function exam_status(totmarks, is_exam) {
+    if (is_exam) {
+        return totmarks >= 90;
+    }
+    return (totmarks >= 89 && totmarks <= 100);
+}
 
-const first2 = str.slice(0, 2);
-console.log(first2); // Co
-
-const first6 = str.slice(0, 6);
-console.log(first6); // Coding
-
-const first8 = str.slice(0, 8);
-console.log(first8); // Coding B
+console.log(exam_status("78", " "));
+console.log(exam_status("89", "true "));
+console.log(exam_status("99", "true "));
