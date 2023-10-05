@@ -1,17 +1,14 @@
-function check(x,y)
-{
-    if (x == 8 || y == 8)
-    {
-        return true;
+function three_numbers(x, y, z) {
+    if (x == y && y == z) {
+      return 30;
     }
-    if (x+y == 8 || x-y == 8)
-    {
-        return true;
+  
+    if (x == y || y == z || z == x) {
+      return 40;
     }
-    return false;
-}
-console.log(check(7,8));
-console.log(check(8,8));
-console.log(check(24,32));
-console.log(check(17,18));
-console.log(check(20,28));
+  
+    return 20;
+  }
+  console.log(three_numbers(8, 8, 8));
+  console.log(three_numbers(8, 8, 18));
+  console.log(three_numbers(8, 7, 18));
