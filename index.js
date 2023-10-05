@@ -1,10 +1,13 @@
-function valCheck (a, b) {
-    if (!((a % 7 == 0 || a % 11 == 0) && (b % 7 == 0 || b % 11 == 0))) {
-    return ((a % 7 == 0 || a % 11 == 0) || (b % 7 == 0 || b % 11 == 0));
-    }
+function test_digit(x, y, n) 
+  {    
+    if (n < 40 || n > 10000)
+      return false;
     else
-    return false;
-    }
-    console.log(valCheck(14, 21));
-    console.log(valCheck(14, 20));
-    console.log(valCheck(16, 20));
+      if (n >= x && n <= y)
+        return true;
+      else
+        return false;
+  }
+console.log(test_digit(40, 4000, 45));  
+console.log(test_digit(80, 320, 79));  
+console.log(test_digit(89, 4000, 30));
