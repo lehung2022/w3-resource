@@ -1,13 +1,15 @@
-function equal_pt(str) {
-    var str_p = str.replace(/[^p]/g, "");
+n1 = 80;
+n2 = 6;
+  
+var div = Math.round(n1 / n2).toString(),
+        result_array = div.split("");
 
-    var str_t = str.replace(/[^t]/g, "");
-
-    var p_num = str_p.length;
-    var s_num = str_t.length;
-
-    return p_num === s_num;
-
-}
-console.log(equal_pt("paatpss"));
-console.log(equal_pt("paatps"));
+    if (div >= 1000)
+       {
+        for (var i = div.length - 3; i > 0; i -= 3) 
+        {
+            result_array.splice(i, 0, ",");
+        }
+          result_array;
+    }
+console.log(result_array);
