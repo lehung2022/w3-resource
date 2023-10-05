@@ -1,14 +1,10 @@
-function number_of_InversionsNaive(arr) {
-    var ctr = 0;
-    for (var i = 0; i < arr.length; i++) {
-        for (var j = i + 1; j < arr.length; j++) {
-            if (arr[i] > arr[j]) 
-              ctr++;
-        }
-    }
-    return ctr;
-}
+const date = new Date();
 
-console.log(number_of_InversionsNaive([0, 3, 2, 5, 9]));   
-console.log(number_of_InversionsNaive([1, 5, 4, 3]));   
-console.log(number_of_InversionsNaive([10, 30, 20, -10]));  
+let day = date.getDate();
+let month = date.getMonth() + 1;
+let year = date.getFullYear();
+
+// This arrangement can be altered based on how we want the date's format to appear.
+let currentDate = `${day}-${month}-${year}`;
+console.log(currentDate); 
+// I changed the name of the branch
