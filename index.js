@@ -1,9 +1,8 @@
-function time_convert(num) {
-    var hours = Math.floor(num / 60);
-    var minutes = num % 60;
-    return hours + ":" + minutes;
+function alphabet_Soup(str) {
+
+    return str.split("").sort().join("");
+
 }
 
-console.log(time_convert(71));
-console.log(time_convert(450));
-console.log(time_convert(1441));
+console.log(alphabet_Soup("Python"));
+console.log(alphabet_Soup("Exercises"));
