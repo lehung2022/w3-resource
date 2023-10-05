@@ -1,10 +1,17 @@
-function sum(x,y)
+function check(x,y)
 {
-    const sum = x+y;
-    if (sum >=50 && sum <= 80){
-        return 65;
+    if (x == 8 || y == 8)
+    {
+        return true;
     }
-    return 80;
+    if (x+y == 8 || x-y == 8)
+    {
+        return true;
+    }
+    return false;
 }
-console.log(sum(30,25));
-console.log(sum(90,75));
+console.log(check(7,8));
+console.log(check(8,8));
+console.log(check(24,32));
+console.log(check(17,18));
+console.log(check(20,28));
