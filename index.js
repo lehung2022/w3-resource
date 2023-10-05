@@ -1,6 +1,11 @@
-function lessby20_others(x, y, z) {
-    return (x >= 20 && (x < y || x < z)) ||(y >= 20 && (y < x || y < z)) ||(z >= 20 && (z < y || z < x));
+function test_nmuber(x, y) {
+    return (x === 15 || y === 15 || x + y === 15 || Math.abs(x - y) === 15);
 }
-console.log(lessby20_others(23, 45, 10));
-console.log(lessby20_others(23, 23, 10));
-console.log(lessby20_others(21, 66, 75));
+
+console.log(test_nmuber(15, 9));
+console.log(test_nmuber(25, 15));
+console.log(test_nmuber(7, 8));
+console.log(test_nmuber(25, 10));
+console.log(test_nmuber(5, 9));
+console.log(test_nmuber(7, 9));
+console.log(test_nmuber(9, 25));
