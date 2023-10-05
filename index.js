@@ -1,10 +1,10 @@
-function exam_status(totmarks, is_exam) {
-    if (is_exam) {
-        return totmarks >= 90;
+function sum(x,y)
+{
+    const sum = x+y;
+    if (sum >=50 && sum <= 80){
+        return 65;
     }
-    return (totmarks >= 89 && totmarks <= 100);
+    return 80;
 }
-
-console.log(exam_status("78", " "));
-console.log(exam_status("89", "true "));
-console.log(exam_status("99", "true "));
+console.log(sum(30,25));
+console.log(sum(90,75));
