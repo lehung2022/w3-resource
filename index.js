@@ -1,11 +1,9 @@
-function newstring(str) {
-    if (str.length >= 3) {
-        result_str = str.substring(str.length - 3);
-        return result_str + result_str + result_str + result_str;
+function first_half(str) {
+    if (str.length % 2 == 0) {
+        return str.slice(0, str.length / 2);
     }
-    else
-        return false;
+    return str;
 }
-console.log(newstring("Python 3.0"));
-console.log(newstring("JS"));
-console.log(newstring("JavaScript"));
+console.log(first_half("Python"));
+console.log(first_half("JavaScript"));
+console.log(first_half("PHP"));
