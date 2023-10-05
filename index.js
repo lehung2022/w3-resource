@@ -1,7 +1,13 @@
-function vowel_Count(str) {
+function equal_pt(str) {
+    var str_p = str.replace(/[^p]/g, "");
 
-    return str.replace(/[^aeiou]/g, "").length;
+    var str_t = str.replace(/[^t]/g, "");
+
+    var p_num = str_p.length;
+    var s_num = str_t.length;
+
+    return p_num === s_num;
+
 }
-
-console.log(vowel_Count("Python"));
-console.log(vowel_Count("w3resource.com"));
+console.log(equal_pt("paatpss"));
+console.log(equal_pt("paatps"));
