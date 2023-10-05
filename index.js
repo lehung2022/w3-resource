@@ -1,8 +1,7 @@
-function alphabet_Soup(str) {
-
-    return str.split("").sort().join("");
-
+function ab_Check(str) {
+    return (/a...b/).test(str) || (/b...a/).test(str);
 }
 
-console.log(alphabet_Soup("Python"));
-console.log(alphabet_Soup("Exercises"));
+console.log(ab_Check("Chainsbreak"));
+console.log(ab_Check("pane borrowed"));
+console.log(ab_Check("abCheck"));
