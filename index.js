@@ -1,17 +1,20 @@
-function max_townums_range(x, y){	
-    if( (x >= 40) && (x <= 60) && (y >= 40 && y <= 60) ){
-    if(x === y){
-    return "Numbers are the same";
-    }else if (x > y){
-    return x;
-    }else{
-    return y;
+function check_char(str1, char)
+ {
+  ctr = 0;
+  for (let i = 0; i < str1.length; i++)
+  {
+    if ((str1.charAt(i) == char) && (i >= 1 && i <= 3))
+    {
+        ctr=1;
+        break;
     }
-    }else{
-    return "Numbers don't fit in range";
-    }
-    }
-    
-    console.log(max_townums_range(45, 60));
-    console.log(max_townums_range(25, 60));
-    console.log(max_townums_range(45, 80));
+   }
+   if (ctr==1) return true;
+   return false;
+}
+console.log(check_char("Python", "y"));
+console.log(check_char("JavaScript", "a"));
+console.log(check_char("Console", "o"));
+console.log(check_char("Console", "C"));
+console.log(check_char("Console", "e"));
+console.log(check_char("JavaScript", "S"));
