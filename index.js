@@ -1,7 +1,7 @@
-function ab_Check(str) {
-    return (/a...b/).test(str) || (/b...a/).test(str);
+function vowel_Count(str) {
+
+    return str.replace(/[^aeiou]/g, "").length;
 }
 
-console.log(ab_Check("Chainsbreak"));
-console.log(ab_Check("pane borrowed"));
-console.log(ab_Check("abCheck"));
+console.log(vowel_Count("Python"));
+console.log(vowel_Count("w3resource.com"));
