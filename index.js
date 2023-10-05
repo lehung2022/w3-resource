@@ -1,23 +1,16 @@
-function near_100(x, y) {
-    if (x != y)
-    {
-    x1 = Math.abs(x - 100);
-    y1 = Math.abs(y - 100);
-  
-    if (x1 < y1)
-    {
-      return x;
-    }
-    if (y1 < x1)
-    {
-      return y;
-    }
-    return 0;
-    }
-    else
+function ranges(x, y) {
+    if ((x >= 40 && x <= 60 && y >= 40 && y <= 60) 
+        || 
+        (x >= 70 && x <= 100 && y >= 70 && y <= 100))
+       {
+      return true;
+       } 
+      else 
+       {
       return false;
+    }
   }
   
-  console.log(near_100(90, 89));
-  console.log(near_100(-90, -89));
-  console.log(near_100(90, 90));
+  console.log(ranges(44, 56));
+  console.log(ranges(70, 95));
+  console.log(ranges(50, 89));
