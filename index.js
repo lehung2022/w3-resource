@@ -1,9 +1,9 @@
-function middle_elements(a, b) {
-    var new_array = []
-    new_array.push(a[1], b[1]);
+function started(nums) {
+    var array1 = [];
+    array1.push(nums[0], nums[nums.length - 1]);
 
-    return new_array;
+    return array1;
 }
-console.log(middle_elements([1, 2, 3], [1, 5, 6]));
-console.log(middle_elements([3, 3, 3], [2, 8, 0]));
-console.log(middle_elements([4, 2, 7], [2, 4, 5]));
+console.log(started([20, 20, 30]));
+console.log(started([5, 2, 7, 8]));
+console.log(started([17, 12, 34, 78]));
