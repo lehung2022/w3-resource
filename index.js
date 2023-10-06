@@ -1,8 +1,7 @@
-function two_string(str, n) {
-    first_part = str.substring(0, n);
-    last_part = str.substring(str.length - n);
-    return first_part + last_part;
+function sum_three(nums) {
+    return nums[0] + nums[1] + nums[2];
 }
 
-console.log(two_string("JavaScript", 2));
-console.log(two_string("JavaScript", 3));
+console.log(sum_three([10, 32, 20]));
+console.log(sum_three([5, 7, 9]));
+console.log(sum_three([0, 8, -11]));
