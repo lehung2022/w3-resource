@@ -1,9 +1,22 @@
-function check_arithmetic_Expression(x, y, z) {
-    return x + y == z || x * y == z || x / y == z || x - y == z;
-}
+function Kth_greatest_in_array(arr, k) {
 
-console.log(check_arithmetic_Expression(10, 25, 35))
-console.log(check_arithmetic_Expression(10, 25, 250))
-console.log(check_arithmetic_Expression(30, 25, 5))
-console.log(check_arithmetic_Expression(100, 25, 4.0))
-console.log(check_arithmetic_Expression(100, 25, 25))
+    for (var i = 0; i < k; i++) {
+      var max_index = i,
+        tmp = arr[i];
+  
+      for (var j = i + 1; j < arr.length; j++) {
+        if (arr[j] > arr[max_index]) {
+          max_index = j;
+        }
+      }
+  
+      arr[i] = arr[max_index];
+      arr[max_index] = tmp;
+    }
+  
+    return arr[k - 1];
+  }
+  
+  console.log(Kth_greatest_in_array([1,2,6,4,5], 3))
+  console.log(Kth_greatest_in_array([-10,-25,-47,-36,0], 1))
+  
