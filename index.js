@@ -1,7 +1,10 @@
-function first_last_1(nums) {
-    var end_pos = nums.length - 1;
-    return nums[0] == 1 || nums[end_pos] == 1;
+function first_last_same(nums) {
+    var end = nums.length - 1;
+    if (nums.length >= 1) {
+        return nums[0] == nums[end];
+    } else { return false; }
 }
-console.log(first_last_1([1, 3, 5]));
-console.log(first_last_1([1, 3, 5, 1]));
-console.log(first_last_1([2, 4, 6]));
+
+console.log(first_last_same([10, 20, 30]));
+console.log(first_last_same([10, 20, 30, 10]));
+console.log(first_last_same([20, 20, 20]));
