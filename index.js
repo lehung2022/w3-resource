@@ -1,6 +1,23 @@
-var side1 = 5; 
-var side2 = 6; 
-var side3 = 7; 
-var s = (side1 + side2 + side3)/2; 
-var area = Math.sqrt(s*((s-side1)*(s-side2)*(s-side3))); 
-console.log(area);
+const rotate = (text, n) => {
+    txtArr = text.split("")
+  
+    if (n > 0) {
+      for (let i = 1; i <= n; i++) {
+        let firstel = txtArr[0]
+        txtArr.shift()
+        txtArr.push(firstel)
+      }
+    }
+    else if (n < 0) {
+      for (let i = -1; i >= n; i--) {
+        let lastel = txtArr[txtArr.length - 1]
+        txtArr.pop()
+        txtArr.unshift(lastel)
+      }
+    }
+  
+    console.log(txtArr.join(""))
+  }
+  
+  rotate("hello", -2)
+  
