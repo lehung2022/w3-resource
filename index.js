@@ -1,6 +1,12 @@
-var side1 = 5; 
-var side2 = 6; 
-var side3 = 7; 
-var s = (side1 + side2 + side3)/2; 
-var area = Math.sqrt(s*((s-side1)*(s-side2)*(s-side3))); 
-console.log(area);
+function animate_string(id) 
+{
+    var element = document.getElementById(id);
+    var textNode = element.childNodes[0]; // assuming no other children
+    var text = textNode.data;
+
+setInterval(function () 
+{
+ text = text[text.length - 1] + text.substring(0, text.length - 1);
+  textNode.data = text;
+}, 100);
+}
