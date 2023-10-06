@@ -1,10 +1,7 @@
-function first_last_same(nums) {
-    var end = nums.length - 1;
-    if (nums.length >= 1) {
-        return nums[0] == nums[end];
-    } else { return false; }
+function reverse3(array) {
+    return array.map((element, idx, arr) => arr[(arr.length - 1) - idx]);
 }
 
-console.log(first_last_same([10, 20, 30]));
-console.log(first_last_same([10, 20, 30, 10]));
-console.log(first_last_same([20, 20, 20]));
+console.log(reverse3([5, 4, 3]));
+console.log(reverse3([1, 0, -1]));
+console.log(reverse3([2, 3, 1]));
