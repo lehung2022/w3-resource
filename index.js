@@ -1,13 +1,8 @@
-function middle_three(str) {
-    if (str.length % 2 != 0) {
+function str_con_cat(str1, str2) {
+    const m = Math.min(str1.length, str2.length);
 
-        mid = (str.length + 1) / 2;
-        return str.slice(mid - 2, mid + 1);
-    }
-    return str;
+    return str1.substring(str1.length - m) + str2.substring(str2.length - m);
 }
-console.log(middle_three('abcdefg'));
-console.log(middle_three('HTML5'));
-console.log(middle_three('Python'));
-console.log(middle_three('PHP'));
-console.log(middle_three('Exercises'));
+
+console.log(str_con_cat("Python", "JS"));
+console.log(str_con_cat("ab", "cdef"));
