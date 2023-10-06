@@ -1,12 +1,18 @@
-function city_name(str) {
-    if (str.length >= 3 && ((str.substring(0, 3) == 'Los')
-        || (str.substring(0, 3) == 'New'))) {
-        return str;
+function nop(str) {
+    let start_pos = 0;
+    let end_pos = str.length;
+
+    if (str.length > 0 && str.charAt(0) == 'P') {
+        start_pos = 1;
     }
 
-    return '';
+    if (str.length > 1 && str.charAt(str.length - 1) == 'P') {
+        end_pos--;
+    }
+
+    return str.substring(start_pos, end_pos);
 }
 
-console.log(city_name("New York"));
-console.log(city_name("Los Angeles"));
-console.log(city_name("London"));
+console.log(nop("PythonP"));
+console.log(nop("Python"));
+console.log(nop("JavaScript"));
