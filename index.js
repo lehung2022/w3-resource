@@ -1,10 +1,7 @@
-function twice3040(arra1) {
-    let a = arra1[0],
-        b = arra1[1];
-    return (a === 30 && b === 30) || (a === 40 && b === 40);
+function swap(arrayA) {
+    [arrayA[0], array[arrayA.length - 1]] = [arrayA[arrayA.length - 1], arrayA[0]];
+    return arrayA;
 }
-
-console.log(twice3040([30, 30]));
-console.log(twice3040([40, 40]));
-console.log(twice3040([20, 20]));
-console.log(twice3040([30]));
+console.log(swap([1, 2, 3, 4]));
+console.log(swap([0, 2, 1]));
+console.log(swap([3]));
