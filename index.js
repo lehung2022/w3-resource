@@ -1,11 +1,9 @@
-function checking_numbers(x, y, divisor) {
-    if(x % divisor === 0 && y % divisor === 0 || x % divisor !== 0 && y % divisor !==
-      0) {
-      return true;
-    }
-    return false;
-  }
-  
-  console.log(checking_numbers(10, 25, 5))
-  console.log(checking_numbers(10, 20, 5))
-  console.log(checking_numbers(10, 20, 4))
+function check_arithmetic_Expression(x, y, z) {
+    return x + y == z || x * y == z || x / y == z || x - y == z;
+}
+
+console.log(check_arithmetic_Expression(10, 25, 35))
+console.log(check_arithmetic_Expression(10, 25, 250))
+console.log(check_arithmetic_Expression(30, 25, 5))
+console.log(check_arithmetic_Expression(100, 25, 4.0))
+console.log(check_arithmetic_Expression(100, 25, 25))
