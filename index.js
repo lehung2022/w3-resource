@@ -1,13 +1,9 @@
-function all_max(nums) 
- {
-    var max_val = nums[0] > nums[2] ? nums[0] : nums[2];
+function middle_elements(a, b) {
+    var new_array = []
+    new_array.push(a[1], b[1]);
 
-    nums[0] = max_val;
-    nums[1] = max_val;
-    nums[2] = max_val;
-
-    return nums;
+    return new_array;
 }
-console.log(all_max([20, 30, 40]));
-console.log(all_max([-7, -9, 0]));
-console.log(all_max([12, 10, 3]));
+console.log(middle_elements([1, 2, 3], [1, 5, 6]));
+console.log(middle_elements([3, 3, 3], [2, 8, 0]));
+console.log(middle_elements([4, 2, 7], [2, 4, 5]));
