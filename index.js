@@ -1,7 +1,6 @@
-function sum_three(nums) {
-    return nums[0] + nums[1] + nums[2];
+function rotate_elements_left(array) {
+    return [array[1], array[2], array[0]];
 }
-
-console.log(sum_three([10, 32, 20]));
-console.log(sum_three([5, 7, 9]));
-console.log(sum_three([0, 8, -11]));
+console.log(rotate_elements_left([3, 4, 5]));
+console.log(rotate_elements_left([0, -1, 2]));
+console.log(rotate_elements_left([7, 6, 5]));
