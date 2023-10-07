@@ -1,17 +1,9 @@
-function array_max_diff(arr) {
-
-    var max_result = 0;
-
-    for(var i=0;i<arr.length;i++)
-       {
-        for(var k=0; k!=i && k<arr.length; k++)
-        {
-            var diff = Math.abs(arr[i]-arr[k]);
-            max_result = Math.max(max_result, diff);
-        }
+function check_common_element(arra1, arra2) {
+    for (var i = 0; i < arra1.length; i++) {
+        if (arra2.indexOf(arra1[i]) != -1)
+            return true;
     }
-    return max_result;
+    return false;
 }
-console.log(array_max_diff([1, 2, 3, 8, 9]))
-console.log(array_max_diff([1, 2, 3, 18, 9]))
-console.log(array_max_diff([13, 2, 3, 8, 9]))
+console.log(check_common_element([1, 2, 3], [3, 4, 5]));
+console.log(check_common_element([1, 2, 3], [5, 6, 7]));
