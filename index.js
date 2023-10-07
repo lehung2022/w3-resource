@@ -1,9 +1,16 @@
-function check_common_element(arra1, arra2) {
-    for (var i = 0; i < arra1.length; i++) {
-        if (arra2.indexOf(arra1[i]) != -1)
-            return true;
+function array_element_mode(arr) {
+    var ctr = [],
+        ans = 0;
+
+    for (var i = 0; i < 10; i++) {
+        ctr.push(0);
     }
-    return false;
+    for (var i = 0; i < arr.length; i++) {
+        ctr[arr[i] - 1]++;
+        if (ctr[arr[i] - 1] > ctr[ans]) {
+            ans = arr[i] - 1;
+        }
+    }
+    return ans + 1;
 }
-console.log(check_common_element([1, 2, 3], [3, 4, 5]));
-console.log(check_common_element([1, 2, 3], [5, 6, 7]));
+console.log(array_element_mode([1, 2, 3, 2, 2, 8, 1, 9]))
