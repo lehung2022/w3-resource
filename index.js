@@ -1,9 +1,42 @@
-function sum_adjacent_difference(arr) {
-    var result = 0;
-    for (var i = 1; i < arr.length; i++) {
-        result += Math.abs(arr[i] - arr[i - 1]);
+function test_string(input_str) {
+
+    var is_lower_case = function (symbol) {
+        if ('a' <= symbol && symbol <= 'z') {
+            return true;
+        }
+        return false;
     }
-    return result;
+
+    var is_upper_case = function (symbol) {
+        if ('A' <= symbol && symbol <= 'Z') {
+            return true;
+        }
+        return false;
+    }
+
+    var is_first_char_lower = is_lower_case(input_str[0]),
+        is_first_char_upper = is_upper_case(input_str[0]);
+
+    if (!(is_first_char_lower || is_first_char_upper)) {
+        return false;
+    }
+
+    for (var i = 1; i < input_str.length; i++) {
+        if (i % 2) {
+            if (is_lower_case(input_str[i]) === is_first_char_lower ||
+                is_upper_case(input_str[i]) === is_first_char_upper) {
+                return false;
+            }
+        } else {
+            if (is_lower_case(input_str[i]) !== is_first_char_lower ||
+                is_upper_case(input_str[i]) !== is_first_char_upper) {
+                return false;
+            }
+        }
+    }
+
+    return true;
 }
 
-console.log(sum_adjacent_difference([1, 2, 3, 2, -5]));
+console.log(test_string('xYr'));
+console.log(test_string('XXyx')); 
