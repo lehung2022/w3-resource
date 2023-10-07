@@ -1,21 +1,16 @@
-function build_Palindrome(new_str) {
-    var flag;
-    for (var i = new_str.length; ; i++) {
-        flag = true;
-        for (var j = 0; j < i - j - 1; j++) {
-            if (i - j - 1 < new_str.length && new_str[j] != new_str[i - j - 1]) {
-                flag = false;
-                break;
-            }
-        }
-        if (flag) {
-            for (var j = new_str.length; j < i; j++) {
-                new_str += new_str[i - j - 1];
-            }
-            return new_str;
-        }
+function change_case(new_str) {
+    var x = 0;
+    var y = 0;
+
+    for (var i = 0; i < new_str.length; i++) {
+        if (/[A-Z]/.test(new_str[i])) {
+            x++;
+        } else y++;
     }
+
+    if (y > x) return new_str.toLowerCase();
+    return new_str.toUpperCase();
 }
 
-console.log(build_Palindrome("abcddc"))
-console.log(build_Palindrome("122"))
+console.log(change_case("Write"))
+console.log(change_case("PHp"))
