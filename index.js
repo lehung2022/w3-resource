@@ -1,11 +1,21 @@
-function array_element_replace(arr, old_value, new_value) {
-    for (var i = 0; i < arr.length; i++) {
-        if (arr[i] === old_value) {
-            arr[i] = new_value;
+function build_Palindrome(new_str) {
+    var flag;
+    for (var i = new_str.length; ; i++) {
+        flag = true;
+        for (var j = 0; j < i - j - 1; j++) {
+            if (i - j - 1 < new_str.length && new_str[j] != new_str[i - j - 1]) {
+                flag = false;
+                break;
+            }
+        }
+        if (flag) {
+            for (var j = new_str.length; j < i; j++) {
+                new_str += new_str[i - j - 1];
+            }
+            return new_str;
         }
     }
-    return arr;
 }
-num = [1, 2, 3, 2, 2, 8, 1, 9];
-console.log("Original Array: " + num);
-console.log(array_element_replace(num, 2, 5));
+
+console.log(build_Palindrome("abcddc"))
+console.log(build_Palindrome("122"))
