@@ -1,9 +1,9 @@
-function check_common_element(arra1, arra2) {
-    for (var i = 0; i < arra1.length; i++) {
-        if (arra2.indexOf(arra1[i]) != -1)
-            return true;
+function sum_adjacent_difference(arr) {
+    var result = 0;
+    for (var i = 1; i < arr.length; i++) {
+        result += Math.abs(arr[i] - arr[i - 1]);
     }
-    return false;
+    return result;
 }
-console.log(check_common_element([1, 2, 3], [3, 4, 5]));
-console.log(check_common_element([1, 2, 3], [5, 6, 7]));
+
+console.log(sum_adjacent_difference([1, 2, 3, 2, -5]));
