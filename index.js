@@ -1,20 +1,9 @@
-function rearrangement_characters(str1, str2) {
-
-    var first_set = str1.split(''),
-        second_set = str2.split(''),
-        result = true;
-
-    first_set.sort();
-    second_set.sort();
-
-    for (var i = 0; i < Math.max(first_set.length, second_set.length); i++) {
-        if (first_set[i] !== second_set[i]) {
-            result = false;
-        }
+function check_common_element(arra1, arra2) {
+    for (var i = 0; i < arra1.length; i++) {
+        if (arra2.indexOf(arra1[i]) != -1)
+            return true;
     }
-
-    return result;
+    return false;
 }
-
-console.log(rearrangement_characters("xyz", "zyx"))
-console.log(rearrangement_characters("xyz", "zyp"))
+console.log(check_common_element([1, 2, 3], [3, 4, 5]));
+console.log(check_common_element([1, 2, 3], [5, 6, 7]));
