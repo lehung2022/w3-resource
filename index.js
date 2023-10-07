@@ -1,16 +1,11 @@
-function array_element_mode(arr) {
-    var ctr = [],
-        ans = 0;
-
-    for (var i = 0; i < 10; i++) {
-        ctr.push(0);
-    }
+function array_element_replace(arr, old_value, new_value) {
     for (var i = 0; i < arr.length; i++) {
-        ctr[arr[i] - 1]++;
-        if (ctr[arr[i] - 1] > ctr[ans]) {
-            ans = arr[i] - 1;
+        if (arr[i] === old_value) {
+            arr[i] = new_value;
         }
     }
-    return ans + 1;
+    return arr;
 }
-console.log(array_element_mode([1, 2, 3, 2, 2, 8, 1, 9]))
+num = [1, 2, 3, 2, 2, 8, 1, 9];
+console.log("Original Array: " + num);
+console.log(array_element_replace(num, 2, 5));
