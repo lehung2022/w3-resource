@@ -1,42 +1,16 @@
-function test_string(input_str) {
+function array_element_mode(arr) {
+    var ctr = [],
+        ans = 0;
 
-    var is_lower_case = function (symbol) {
-        if ('a' <= symbol && symbol <= 'z') {
-            return true;
-        }
-        return false;
+    for (var i = 0; i < 10; i++) {
+        ctr.push(0);
     }
-
-    var is_upper_case = function (symbol) {
-        if ('A' <= symbol && symbol <= 'Z') {
-            return true;
-        }
-        return false;
-    }
-
-    var is_first_char_lower = is_lower_case(input_str[0]),
-        is_first_char_upper = is_upper_case(input_str[0]);
-
-    if (!(is_first_char_lower || is_first_char_upper)) {
-        return false;
-    }
-
-    for (var i = 1; i < input_str.length; i++) {
-        if (i % 2) {
-            if (is_lower_case(input_str[i]) === is_first_char_lower ||
-                is_upper_case(input_str[i]) === is_first_char_upper) {
-                return false;
-            }
-        } else {
-            if (is_lower_case(input_str[i]) !== is_first_char_lower ||
-                is_upper_case(input_str[i]) !== is_first_char_upper) {
-                return false;
-            }
+    for (var i = 0; i < arr.length; i++) {
+        ctr[arr[i] - 1]++;
+        if (ctr[arr[i] - 1] > ctr[ans]) {
+            ans = arr[i] - 1;
         }
     }
-
-    return true;
+    return ans + 1;
 }
-
-console.log(test_string('xYr'));
-console.log(test_string('XXyx')); 
+console.log(array_element_mode([1, 2, 3, 2, 2, 8, 1, 9]))
