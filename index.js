@@ -1,16 +1,20 @@
-function change_case(new_str) {
-    var x = 0;
-    var y = 0;
+function rearrangement_characters(str1, str2) {
 
-    for (var i = 0; i < new_str.length; i++) {
-        if (/[A-Z]/.test(new_str[i])) {
-            x++;
-        } else y++;
+    var first_set = str1.split(''),
+        second_set = str2.split(''),
+        result = true;
+
+    first_set.sort();
+    second_set.sort();
+
+    for (var i = 0; i < Math.max(first_set.length, second_set.length); i++) {
+        if (first_set[i] !== second_set[i]) {
+            result = false;
+        }
     }
 
-    if (y > x) return new_str.toLowerCase();
-    return new_str.toUpperCase();
+    return result;
 }
 
-console.log(change_case("Write"))
-console.log(change_case("PHp"))
+console.log(rearrangement_characters("xyz", "zyx"))
+console.log(rearrangement_characters("xyz", "zyp"))
