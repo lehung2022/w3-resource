@@ -1,9 +1,42 @@
-function check_common_element(arra1, arra2) {
-    for (var i = 0; i < arra1.length; i++) {
-        if (arra2.indexOf(arra1[i]) != -1)
+function test_string(input_str) {
+
+    var is_lower_case = function (symbol) {
+        if ('a' <= symbol && symbol <= 'z') {
             return true;
+        }
+        return false;
     }
-    return false;
+
+    var is_upper_case = function (symbol) {
+        if ('A' <= symbol && symbol <= 'Z') {
+            return true;
+        }
+        return false;
+    }
+
+    var is_first_char_lower = is_lower_case(input_str[0]),
+        is_first_char_upper = is_upper_case(input_str[0]);
+
+    if (!(is_first_char_lower || is_first_char_upper)) {
+        return false;
+    }
+
+    for (var i = 1; i < input_str.length; i++) {
+        if (i % 2) {
+            if (is_lower_case(input_str[i]) === is_first_char_lower ||
+                is_upper_case(input_str[i]) === is_first_char_upper) {
+                return false;
+            }
+        } else {
+            if (is_lower_case(input_str[i]) !== is_first_char_lower ||
+                is_upper_case(input_str[i]) !== is_first_char_upper) {
+                return false;
+            }
+        }
+    }
+
+    return true;
 }
-console.log(check_common_element([1, 2, 3], [3, 4, 5]));
-console.log(check_common_element([1, 2, 3], [5, 6, 7]));
+
+console.log(test_string('xYr'));
+console.log(test_string('XXyx')); 
