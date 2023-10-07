@@ -1,17 +1,16 @@
-function array_max_diff(arr) {
+function array_element_mode(arr) {
+    var ctr = [],
+        ans = 0;
 
-    var max_result = 0;
-
-    for(var i=0;i<arr.length;i++)
-       {
-        for(var k=0; k!=i && k<arr.length; k++)
-        {
-            var diff = Math.abs(arr[i]-arr[k]);
-            max_result = Math.max(max_result, diff);
+    for (var i = 0; i < 10; i++) {
+        ctr.push(0);
+    }
+    for (var i = 0; i < arr.length; i++) {
+        ctr[arr[i] - 1]++;
+        if (ctr[arr[i] - 1] > ctr[ans]) {
+            ans = arr[i] - 1;
         }
     }
-    return max_result;
+    return ans + 1;
 }
-console.log(array_max_diff([1, 2, 3, 8, 9]))
-console.log(array_max_diff([1, 2, 3, 18, 9]))
-console.log(array_max_diff([13, 2, 3, 8, 9]))
+console.log(array_element_mode([1, 2, 3, 2, 2, 8, 1, 9]))
