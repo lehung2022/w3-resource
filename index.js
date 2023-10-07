@@ -1,20 +1,16 @@
-function rearrangement_characters(str1, str2) {
+function array_element_mode(arr) {
+    var ctr = [],
+        ans = 0;
 
-    var first_set = str1.split(''),
-        second_set = str2.split(''),
-        result = true;
-
-    first_set.sort();
-    second_set.sort();
-
-    for (var i = 0; i < Math.max(first_set.length, second_set.length); i++) {
-        if (first_set[i] !== second_set[i]) {
-            result = false;
+    for (var i = 0; i < 10; i++) {
+        ctr.push(0);
+    }
+    for (var i = 0; i < arr.length; i++) {
+        ctr[arr[i] - 1]++;
+        if (ctr[arr[i] - 1] > ctr[ans]) {
+            ans = arr[i] - 1;
         }
     }
-
-    return result;
+    return ans + 1;
 }
-
-console.log(rearrangement_characters("xyz", "zyx"))
-console.log(rearrangement_characters("xyz", "zyp"))
+console.log(array_element_mode([1, 2, 3, 2, 2, 8, 1, 9]))
