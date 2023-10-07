@@ -1,14 +1,42 @@
-function number_of_InversionsNaive(arr) {
-    var ctr = 0;
-    for (var i = 0; i < arr.length; i++) {
-        for (var j = i + 1; j < arr.length; j++) {
-            if (arr[i] > arr[j]) 
-              ctr++;
+function test_string(input_str) {
+
+    var is_lower_case = function (symbol) {
+        if ('a' <= symbol && symbol <= 'z') {
+            return true;
+        }
+        return false;
+    }
+
+    var is_upper_case = function (symbol) {
+        if ('A' <= symbol && symbol <= 'Z') {
+            return true;
+        }
+        return false;
+    }
+
+    var is_first_char_lower = is_lower_case(input_str[0]),
+        is_first_char_upper = is_upper_case(input_str[0]);
+
+    if (!(is_first_char_lower || is_first_char_upper)) {
+        return false;
+    }
+
+    for (var i = 1; i < input_str.length; i++) {
+        if (i % 2) {
+            if (is_lower_case(input_str[i]) === is_first_char_lower ||
+                is_upper_case(input_str[i]) === is_first_char_upper) {
+                return false;
+            }
+        } else {
+            if (is_lower_case(input_str[i]) !== is_first_char_lower ||
+                is_upper_case(input_str[i]) !== is_first_char_upper) {
+                return false;
+            }
         }
     }
-    return ctr;
+
+    return true;
 }
 
-console.log(number_of_InversionsNaive([0, 3, 2, 5, 9]));   
-console.log(number_of_InversionsNaive([1, 5, 4, 3]));   
-console.log(number_of_InversionsNaive([10, 30, 20, -10]));  
+console.log(test_string('xYr'));
+console.log(test_string('XXyx')); 
