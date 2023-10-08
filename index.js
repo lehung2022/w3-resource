@@ -1,12 +1,22 @@
-function animate_string(id) 
-{
-    var element = document.getElementById(id);
-    var textNode = element.childNodes[0]; // assuming no other children
-    var text = textNode.data;
+var today = new Date();
+var dd = today.getDate();
 
-setInterval(function () 
+var mm = today.getMonth()+1; 
+var yyyy = today.getFullYear();
+if(dd<10) 
 {
- text = text[text.length - 1] + text.substring(0, text.length - 1);
-  textNode.data = text;
-}, 100);
-}
+    dd='0'+dd;
+} 
+
+if(mm<10) 
+{
+    mm='0'+mm;
+} 
+today = mm+'-'+dd+'-'+yyyy;
+console.log(today);
+today = mm+'/'+dd+'/'+yyyy;
+console.log(today);
+today = dd+'-'+mm+'-'+yyyy;
+console.log(today);
+today = dd+'/'+mm+'/'+yyyy;
+console.log(today);
