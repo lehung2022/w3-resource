@@ -1,22 +1,15 @@
-var today = new Date();
-var dd = today.getDate();
+// program to display the date
+// get local machine date time
+const date = new Date();
 
-var mm = today.getMonth()+1; 
-var yyyy = today.getFullYear();
-if(dd<10) 
-{
-    dd='0'+dd;
-} 
+// get the date as a string
+const n = date.toDateString();
 
-if(mm<10) 
-{
-    mm='0'+mm;
-} 
-today = mm+'-'+dd+'-'+yyyy;
-console.log(today);
-today = mm+'/'+dd+'/'+yyyy;
-console.log(today);
-today = dd+'-'+mm+'-'+yyyy;
-console.log(today);
-today = dd+'/'+mm+'/'+yyyy;
-console.log(today);
+// get the time as a string
+const time = date.toLocaleTimeString();
+
+// display date
+console.log('Date: ' + n);
+
+// display time
+console.log('Time: ' + time);
