@@ -3,6 +3,7 @@ body {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .view1 {
     display: flex;
     flex-direction: row;
@@ -49,3 +50,19 @@ h1 {
 	font-weight: bold;
 }
 >>>>>>> 0a92776 (exercise seven is done)
+=======
+h1 {
+	color: green;
+}
+
+#geeks {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+#gfg {
+	color: green;
+	font-size: 20px;
+	font-weight: bold;
+}
+>>>>>>> 18bbc0b650296aa5361d210e6508fca045d214e6
