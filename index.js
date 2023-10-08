@@ -22,3 +22,4 @@ console.log(christmasYear);
 console.log(christmasDate);
 console.log(dayMilliseconds);
 console.log(remainingDays);
+
