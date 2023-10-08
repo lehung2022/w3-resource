@@ -1,14 +1,12 @@
-function number_of_InversionsNaive(arr) {
-    var ctr = 0;
-    for (var i = 0; i < arr.length; i++) {
-        for (var j = i + 1; j < arr.length; j++) {
-            if (arr[i] > arr[j]) 
-              ctr++;
-        }
-    }
-    return ctr;
-}
+function animate_string(id) 
+{
+    var element = document.getElementById(id);
+    var textNode = element.childNodes[0]; // assuming no other children
+    var text = textNode.data;
 
-console.log(number_of_InversionsNaive([0, 3, 2, 5, 9]));   
-console.log(number_of_InversionsNaive([1, 5, 4, 3]));   
-console.log(number_of_InversionsNaive([10, 30, 20, -10]));  
+setInterval(function () 
+{
+ text = text[text.length - 1] + text.substring(0, text.length - 1);
+  textNode.data = text;
+}, 100);
+}
