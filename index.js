@@ -1,9 +1,12 @@
-function leapyear(year)
+function animate_string(id) 
 {
-return (year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0);
+    var element = document.getElementById(id);
+    var textNode = element.childNodes[0]; // assuming no other children
+    var text = textNode.data;
+
+setInterval(function () 
+{
+ text = text[text.length - 1] + text.substring(0, text.length - 1);
+  textNode.data = text;
+}, 100);
 }
-console.log(leapyear(2016));
-console.log(leapyear(2000));
-console.log(leapyear(1700));
-console.log(leapyear(1800));
-console.log(leapyear(100));
