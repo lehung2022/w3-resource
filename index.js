@@ -1,12 +1,10 @@
-function animate_string(id) 
-{
-    var element = document.getElementById(id);
-    var textNode = element.childNodes[0]; // assuming no other children
-    var text = textNode.data;
+const date = new Date();
 
-setInterval(function () 
-{
- text = text[text.length - 1] + text.substring(0, text.length - 1);
-  textNode.data = text;
-}, 100);
-}
+let day = date.getDate();
+let month = date.getMonth() + 1;
+let year = date.getFullYear();
+
+// This arrangement can be altered based on how we want the date's format to appear.
+let currentDate = `${day}-${month}-${year}`;
+console.log(currentDate); 
+// I changed the name of the branch
